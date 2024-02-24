@@ -20,9 +20,9 @@
         
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <button id="boton" class="btn btn-primary m-3">Mostrar/ocultar</button>
-                <img id="imagen" class="w-100" src="Piscina.png" alt="">
+                <img id="imagen" class="w-100" src="Piscina.png" alt="display: block;">
             </div>
         </div>
     </div>
@@ -31,13 +31,15 @@
         <script>
             let boton = document.getElementById("boton");
             boton.addEventListener("click",function(){
-            let imagen = document.querySelector("imagen");
+            let imagen = document.getElementById("imagen");
             if(imagen.style.display == "none") {
                 imagen.style.display = "block";
             }
             else {
                 imagen.style.display = "none";
             }
+            
+
         });
             
             
