@@ -3,7 +3,7 @@ let listaProductos = document.querySelector('#listaProductos')
 
 
 function obtieneProductos(){
-    fetch('https://fakestoreapi.com/products/')
+    fetch('https://jsonplaceholder.typicode.com/todos/')
             .then(res=>res.json())
             .then(productosObtenidos =>{
                 console.log("Productos obtenidos" , productosObtenidos)
@@ -14,17 +14,15 @@ function obtieneProductos(){
                 listaProductos.innerHTML += `
                 
                 
-                <div class="col-12 col.md-3">
-                <div class="card">
-                    <img src="${producto.image}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                            <h5 class="card-title">${producto.title}</h5>
-                            <p class="card-text">${producto.description.slice(0,100)}</p>
-                            <p class="text-danger">${producto.price}</p>
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${producto.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-               </div>     
+                </div>     
                 `;
                 });
             });
